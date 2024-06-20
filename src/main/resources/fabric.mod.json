@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "starlish",
+	"version": "${version}",
+	"name": "Starlish",
+	"description": "Style your Enchantments with Icons !",
+	"authors": [
+		"Gaura"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/starlish",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/starlish/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.gaura.starlish.Starlish"
+		],
+		"modmenu": [
+			"com.gaura.starlish.config.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"starlish.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20",
+		"java": ">=17",
+		"fabric-api": "*",
+		"cloth-config": ">=11.1.118"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

@@ -1,0 +1,15 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "starlish:font/icon.png",
+      "ascent": 7,
+      "chars": [
+        "\uEFE0\uEFE1\uEFE2\uEFE3\uEFE4",
+        "\uEFE5\uEFE6\uEFE7\uEFE8\uEFE9",
+        "\uEFEA\uEFEB\uEFEC\uEFED\uEFEE",
+        "\uEFEF\uEFF0\uEFF1\uEFF2\uEFF3"
+      ]
+    }
+  ]
+}

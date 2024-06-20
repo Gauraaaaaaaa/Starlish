@@ -9,7 +9,8 @@
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/mod/starlish",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/Gauraaaaaaaa/Starlish",
+		"issues": "https://github.com/Gauraaaaaaaa/Starlish/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/starlish/icon.png",

@@ -92,7 +92,7 @@ public class EnchantmentMixin {
 
     private static int getLevelColor(int level, Enchantment enchantment) {
 
-        if (level == enchantment.getMaxLevel()) {
+        if (level == enchantment.getMaxLevel() && Starlish.CONFIG.enable_level_max_color) {
 
             return Starlish.CONFIG.level_max_color;
         }

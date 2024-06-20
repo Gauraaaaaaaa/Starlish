@@ -108,7 +108,7 @@ public class StarlishConfig implements ConfigData {
 
     @ConfigEntry.Category("after_icon")
     @ConfigEntry.ColorPicker
-    public int level_5_color = 0x000000;
+    public int level_5_color = 0xFFAA00;
 
     @ConfigEntry.Category("after_icon")
     @ConfigEntry.ColorPicker
@@ -129,6 +129,10 @@ public class StarlishConfig implements ConfigData {
     @ConfigEntry.Category("after_icon")
     @ConfigEntry.ColorPicker
     public int level_10_color = 0x000000;
+
+    @ConfigEntry.Category("after_icon")
+    @Comment("If enchantments at max level will have a different color.")
+    public boolean enable_level_max_color = true;
 
     @ConfigEntry.Category("after_icon")
     @ConfigEntry.ColorPicker

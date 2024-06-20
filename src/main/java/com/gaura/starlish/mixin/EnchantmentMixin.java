@@ -44,11 +44,11 @@ public class EnchantmentMixin {
 
             MutableText before = Text.empty();
 
-            for (EnchantmentBeforeIcon test : Starlish.CONFIG.iconBeforeEnchantment) {
+            for (EnchantmentBeforeIcon elem : Starlish.CONFIG.iconBeforeEnchantment) {
 
-                if (enchantment == Registries.ENCHANTMENT.get(new Identifier(test.enchantment))) {
+                if (enchantment == Registries.ENCHANTMENT.get(new Identifier(elem.enchantment))) {
 
-                    before.append(Text.literal(test.icon.getIcon()).setStyle(Style.EMPTY.withColor(test.color)).append(ScreenTexts.SPACE));
+                    before.append(Text.literal(elem.icon.getIcon()).setStyle(Style.EMPTY.withColor(elem.color)).append(ScreenTexts.SPACE));
                 }
             }
 
@@ -83,7 +83,11 @@ public class EnchantmentMixin {
 
             MutableText romanLevel = Text.literal(split[split.length - 1]);
 
-            enchantmentName.append(ScreenTexts.SPACE).append(romanLevel).setStyle(Style.EMPTY.withColor(getLevelColor(level, enchantment)));
+            MutableText after = Text.empty().append(ScreenTexts.SPACE);
+
+            after.append(romanLevel).setStyle(Style.EMPTY.withColor(getLevelColor(level, enchantment)));
+
+            enchantmentName.append(after);
         }
         // endregion
 

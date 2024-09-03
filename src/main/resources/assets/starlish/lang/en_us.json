@@ -1,26 +1,37 @@
 {
   "text.autoconfig.starlish.title": "Starlish",
 
-  "text.autoconfig.starlish.category.before_icon": "Before Icon",
 
-  "text.autoconfig.starlish.option.enable_before_icon": "Enable Before Icon",
-  "text.autoconfig.starlish.option.iconBeforeEnchantment": "Icon Before Enchantment",
-  "text.autoconfig.starlish.option.EnchantmentBeforeIcon": "Entry :",
-  "text.autoconfig.starlish.option.EnchantmentBeforeIcon.enchantment": "Enchantment",
-  "text.autoconfig.starlish.option.EnchantmentBeforeIcon.icon": "Icon",
-  "text.autoconfig.starlish.option.EnchantmentBeforeIcon.color": "Color",
-
-
-  "text.autoconfig.starlish.category.enchantment_color": "Enchantment Color",
+  "text.autoconfig.starlish.category.enchantment": "Enchantment",
 
   "text.autoconfig.starlish.option.normal_enchantment": "Normal Enchantment Color",
   "text.autoconfig.starlish.option.treasure_enchantment": "Treasure Enchantment Color",
   "text.autoconfig.starlish.option.curse_enchantment": "Curse Enchantment Color",
+  "text.autoconfig.starlish.option.enable_level_max_color": "Enable Level Max Color",
+  "text.autoconfig.starlish.option.level_max_color": "Level Max Color",
+  "text.autoconfig.starlish.option.enable_curse_icon": "Enable Curse Icon",
+  "text.autoconfig.starlish.option.curse_icon": "Curse Icon",
+  "text.autoconfig.starlish.option.curse_icon_color": "Curse Icon Color",
+  "text.autoconfig.starlish.option.enable_gear_icon": "Enable Gear Icon",
+  "text.autoconfig.starlish.option.gear_icon_list": "Gear Icon List",
+  "text.autoconfig.starlish.option.GearIcon": "Entry :",
+  "text.autoconfig.starlish.option.GearIcon.enchantment": "Enchantment",
+  "text.autoconfig.starlish.option.GearIcon.icon": "Icon",
+  "text.autoconfig.starlish.option.GearIcon.color": "Color",
 
 
-  "text.autoconfig.starlish.category.after_icon": "After Icon",
+  "text.autoconfig.starlish.category.potion": "Potion",
 
-  "text.autoconfig.starlish.option.enable_after_icon": "Enable After Icon",
+  "text.autoconfig.starlish.option.hms_potion_time": "h/m/s Potion Time",
+  "text.autoconfig.starlish.option.potion_time_color": "Potion Time Color",
+  "text.autoconfig.starlish.option.beneficial_potion_color": "Beneficial Potion Color",
+  "text.autoconfig.starlish.option.neutral_potion_color": "Neutral Potion Color",
+  "text.autoconfig.starlish.option.harmful_potion_color": "Harmful Potion Color",
+
+
+  "text.autoconfig.starlish.category.level_icon": "Level Icon",
+
+  "text.autoconfig.starlish.option.enable_level_icon": "Enable Level Icon",
   "text.autoconfig.starlish.option.level_icon": "Level Icon",
   "text.autoconfig.starlish.option.level_1_color": "Level 1 Color",
   "text.autoconfig.starlish.option.level_2_color": "Level 2 Color",
@@ -31,10 +42,5 @@
   "text.autoconfig.starlish.option.level_7_color": "Level 7 Color",
   "text.autoconfig.starlish.option.level_8_color": "Level 8 Color",
   "text.autoconfig.starlish.option.level_9_color": "Level 9 Color",
-  "text.autoconfig.starlish.option.level_10_color": "Level 10 Color",
-  "text.autoconfig.starlish.option.enable_level_max_color": "Enable Level Max Color",
-  "text.autoconfig.starlish.option.level_max_color": "Level Max Color",
-  "text.autoconfig.starlish.option.enable_curse_icon": "Enable Curse Icon",
-  "text.autoconfig.starlish.option.curse_icon": "Curse Icon",
-  "text.autoconfig.starlish.option.curse_icon_color": "Curse Icon Color"
+  "text.autoconfig.starlish.option.level_10_color": "Level 10 Color"
 }

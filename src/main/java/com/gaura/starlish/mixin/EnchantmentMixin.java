@@ -1,7 +1,7 @@
 package com.gaura.starlish.mixin;
 
 import com.gaura.starlish.Starlish;
-import com.gaura.starlish.config.EnchantmentBeforeIcon;
+import com.gaura.starlish.config.GearIcon;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.registry.Registries;
 import net.minecraft.screen.ScreenTexts;
@@ -10,6 +10,7 @@ import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -24,7 +25,7 @@ public class EnchantmentMixin {
 
         MutableText enchantmentName = Text.translatable(enchantment.getTranslationKey());
 
-        // region ENCHANTMENT NAME
+        // region ENCHANTMENT
         if (enchantment.isCursed()) {
 
             enchantmentName.setStyle(Style.EMPTY.withColor(Starlish.CONFIG.curse_enchantment));
@@ -39,12 +40,12 @@ public class EnchantmentMixin {
         }
         // endregion
 
-        // region BEFORE
-        if (Starlish.CONFIG.enable_before_icon) {
+        // region GEAR ICON
+        if (Starlish.CONFIG.enable_gear_icon) {
 
             MutableText before = Text.empty();
 
-            for (EnchantmentBeforeIcon elem : Starlish.CONFIG.iconBeforeEnchantment) {
+            for (GearIcon elem : Starlish.CONFIG.gear_icon_list) {
 
                 if (enchantment == Registries.ENCHANTMENT.get(new Identifier(elem.enchantment))) {
 
@@ -56,8 +57,8 @@ public class EnchantmentMixin {
         }
         // endregion
 
-        // region AFTER
-        if (Starlish.CONFIG.enable_after_icon) {
+        // region LEVEL ICON
+        if (Starlish.CONFIG.enable_level_icon) {
 
             MutableText after = Text.empty().append(ScreenTexts.SPACE);
 
@@ -67,10 +68,7 @@ public class EnchantmentMixin {
             }
             else if (!enchantment.isCursed()) {
 
-                for (int i = 0; i < level; i++) {
-
-                    after.append(Text.literal(Starlish.CONFIG.level_icon.getIcon()).setStyle(Style.EMPTY.withColor(getLevelColor(level, enchantment))));
-                }
+                after.append(Text.literal(Starlish.CONFIG.level_icon.getIcon().repeat(level)).setStyle(Style.EMPTY.withColor(getEnchantmentLevelColor(level, enchantment))));
             }
 
             enchantmentName.append(after);
@@ -85,7 +83,7 @@ public class EnchantmentMixin {
 
             MutableText after = Text.empty().append(ScreenTexts.SPACE);
 
-            after.append(romanLevel).setStyle(Style.EMPTY.withColor(getLevelColor(level, enchantment)));
+            after.append(romanLevel).setStyle(Style.EMPTY.withColor(getEnchantmentLevelColor(level, enchantment)));
 
             enchantmentName.append(after);
         }
@@ -94,61 +92,9 @@ public class EnchantmentMixin {
         cir.setReturnValue(enchantmentName);
     }
 
-    private static int getLevelColor(int level, Enchantment enchantment) {
+    @Unique
+    private int getEnchantmentLevelColor(int level, Enchantment enchantment) {
 
-        if (level == enchantment.getMaxLevel() && Starlish.CONFIG.enable_level_max_color) {
-
-            return Starlish.CONFIG.level_max_color;
-        }
-        else {
-
-            switch (level) {
-
-                case 1 -> {
-
-                    return Starlish.CONFIG.level_1_color;
-                }
-                case 2 -> {
-
-                    return Starlish.CONFIG.level_2_color;
-                }
-                case 3 -> {
-
-                    return Starlish.CONFIG.level_3_color;
-                }
-                case 4 -> {
-
-                    return Starlish.CONFIG.level_4_color;
-                }
-                case 5 -> {
-
-                    return Starlish.CONFIG.level_5_color;
-                }
-                case 6 -> {
-
-                    return Starlish.CONFIG.level_6_color;
-                }
-                case 7 -> {
-
-                    return Starlish.CONFIG.level_7_color;
-                }
-                case 8 -> {
-
-                    return Starlish.CONFIG.level_8_color;
-                }
-                case 9 -> {
-
-                    return Starlish.CONFIG.level_9_color;
-                }
-                case 10 -> {
-
-                    return Starlish.CONFIG.level_10_color;
-                }
-                default -> {
-
-                    return 0xFFFFFF;
-                }
-            }
-        }
+        return (level == enchantment.getMaxLevel() && Starlish.CONFIG.enable_level_max_color) ? Starlish.CONFIG.level_max_color : Starlish.getLevelColor(level);
     }
 }

@@ -27,11 +27,11 @@
 		"starlish.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.11",
+		"fabricloader": ">=0.16.10",
 		"minecraft": "~1.20",
 		"java": ">=17",
 		"fabric-api": "*",
-		"cloth-config": ">=11.1.118"
+		"cloth-config": ">=11.1.136"
 	},
 	"suggests": {
 		"another-mod": "*"

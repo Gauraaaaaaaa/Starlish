@@ -1,6 +1,7 @@
 package com.gaura.starlish.config;
 
 public enum Icon {
+
     SWORD("\uEFE0"),
     PICKAXE("\uEFE1"),
     AXE("\uEFE2"),

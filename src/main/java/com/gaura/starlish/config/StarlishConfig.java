@@ -9,6 +9,55 @@ import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 @Config.Gui.Background("minecraft:textures/block/yellow_wool.png")
 public class StarlishConfig implements ConfigData {
 
+    // LEVEL ICON
+
+    @ConfigEntry.Category("level_icon")
+    public boolean enable_level_icon = true;
+
+    @ConfigEntry.Category("level_icon")
+    @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+    public Icon level_icon = Icon.STAR;
+
+    @ConfigEntry.Category("level_icon")
+    @ConfigEntry.ColorPicker
+    public int level_1_color = 0x55FF55;
+
+    @ConfigEntry.Category("level_icon")
+    @ConfigEntry.ColorPicker
+    public int level_2_color = 0x55FFFF;
+
+    @ConfigEntry.Category("level_icon")
+    @ConfigEntry.ColorPicker
+    public int level_3_color = 0xFF55FF;
+
+    @ConfigEntry.Category("level_icon")
+    @ConfigEntry.ColorPicker
+    public int level_4_color = 0xFFFF55;
+
+    @ConfigEntry.Category("level_icon")
+    @ConfigEntry.ColorPicker
+    public int level_5_color = 0xFFAA00;
+
+    @ConfigEntry.Category("level_icon")
+    @ConfigEntry.ColorPicker
+    public int level_6_color = 0xFF5555;
+
+    @ConfigEntry.Category("level_icon")
+    @ConfigEntry.ColorPicker
+    public int level_7_color = 0x000000;
+
+    @ConfigEntry.Category("level_icon")
+    @ConfigEntry.ColorPicker
+    public int level_8_color = 0x000000;
+
+    @ConfigEntry.Category("level_icon")
+    @ConfigEntry.ColorPicker
+    public int level_9_color = 0x000000;
+
+    @ConfigEntry.Category("level_icon")
+    @ConfigEntry.ColorPicker
+    public int level_10_color = 0x000000;
+
     // ENCHANTMENT
 
     @ConfigEntry.Category("enchantment")
@@ -116,58 +165,9 @@ public class StarlishConfig implements ConfigData {
 
     @ConfigEntry.Category("potion")
     @ConfigEntry.ColorPicker
-    public int neutral_potion_color = 0xAAAAAA;
+    public int neutral_potion_color = 0xAA00FF;
 
     @ConfigEntry.Category("potion")
     @ConfigEntry.ColorPicker
     public int harmful_potion_color = 0xAA0000;
-
-    // LEVEL ICON
-
-    @ConfigEntry.Category("level_icon")
-    public boolean enable_level_icon = true;
-
-    @ConfigEntry.Category("level_icon")
-    @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-    public Icon level_icon = Icon.STAR;
-
-    @ConfigEntry.Category("level_icon")
-    @ConfigEntry.ColorPicker
-    public int level_1_color = 0x55FF55;
-
-    @ConfigEntry.Category("level_icon")
-    @ConfigEntry.ColorPicker
-    public int level_2_color = 0x55FFFF;
-
-    @ConfigEntry.Category("level_icon")
-    @ConfigEntry.ColorPicker
-    public int level_3_color = 0xFF55FF;
-
-    @ConfigEntry.Category("level_icon")
-    @ConfigEntry.ColorPicker
-    public int level_4_color = 0xFFFF55;
-
-    @ConfigEntry.Category("level_icon")
-    @ConfigEntry.ColorPicker
-    public int level_5_color = 0xFFAA00;
-
-    @ConfigEntry.Category("level_icon")
-    @ConfigEntry.ColorPicker
-    public int level_6_color = 0xFF5555;
-
-    @ConfigEntry.Category("level_icon")
-    @ConfigEntry.ColorPicker
-    public int level_7_color = 0x000000;
-
-    @ConfigEntry.Category("level_icon")
-    @ConfigEntry.ColorPicker
-    public int level_8_color = 0x000000;
-
-    @ConfigEntry.Category("level_icon")
-    @ConfigEntry.ColorPicker
-    public int level_9_color = 0x000000;
-
-    @ConfigEntry.Category("level_icon")
-    @ConfigEntry.ColorPicker
-    public int level_10_color = 0x000000;
 }

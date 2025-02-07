@@ -1,12 +1,14 @@
 {
   "required": true,
   "package": "com.gaura.starlish.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_21",
   "mixins": [
     "EnchantmentMixin",
-    "PotionUtilMixin"
+    "PotionContentsComponentMixin",
+    "StatusEffectsDisplayMixin",
+    "StringHelperMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  }
 }

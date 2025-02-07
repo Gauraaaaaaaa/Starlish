@@ -2,6 +2,22 @@
   "text.autoconfig.starlish.title": "Starlish",
 
 
+  "text.autoconfig.starlish.category.level_icon": "Level Icon",
+
+  "text.autoconfig.starlish.option.enable_level_icon": "Enable Level Icon",
+  "text.autoconfig.starlish.option.level_icon": "Level Icon",
+  "text.autoconfig.starlish.option.level_1_color": "Level 1 Color",
+  "text.autoconfig.starlish.option.level_2_color": "Level 2 Color",
+  "text.autoconfig.starlish.option.level_3_color": "Level 3 Color",
+  "text.autoconfig.starlish.option.level_4_color": "Level 4 Color",
+  "text.autoconfig.starlish.option.level_5_color": "Level 5 Color",
+  "text.autoconfig.starlish.option.level_6_color": "Level 6 Color",
+  "text.autoconfig.starlish.option.level_7_color": "Level 7 Color",
+  "text.autoconfig.starlish.option.level_8_color": "Level 8 Color",
+  "text.autoconfig.starlish.option.level_9_color": "Level 9 Color",
+  "text.autoconfig.starlish.option.level_10_color": "Level 10 Color",
+
+
   "text.autoconfig.starlish.category.enchantment": "Enchantment",
 
   "text.autoconfig.starlish.option.normal_enchantment": "Normal Enchantment Color",
@@ -26,21 +42,5 @@
   "text.autoconfig.starlish.option.potion_time_color": "Potion Time Color",
   "text.autoconfig.starlish.option.beneficial_potion_color": "Beneficial Potion Color",
   "text.autoconfig.starlish.option.neutral_potion_color": "Neutral Potion Color",
-  "text.autoconfig.starlish.option.harmful_potion_color": "Harmful Potion Color",
-
-
-  "text.autoconfig.starlish.category.level_icon": "Level Icon",
-
-  "text.autoconfig.starlish.option.enable_level_icon": "Enable Level Icon",
-  "text.autoconfig.starlish.option.level_icon": "Level Icon",
-  "text.autoconfig.starlish.option.level_1_color": "Level 1 Color",
-  "text.autoconfig.starlish.option.level_2_color": "Level 2 Color",
-  "text.autoconfig.starlish.option.level_3_color": "Level 3 Color",
-  "text.autoconfig.starlish.option.level_4_color": "Level 4 Color",
-  "text.autoconfig.starlish.option.level_5_color": "Level 5 Color",
-  "text.autoconfig.starlish.option.level_6_color": "Level 6 Color",
-  "text.autoconfig.starlish.option.level_7_color": "Level 7 Color",
-  "text.autoconfig.starlish.option.level_8_color": "Level 8 Color",
-  "text.autoconfig.starlish.option.level_9_color": "Level 9 Color",
-  "text.autoconfig.starlish.option.level_10_color": "Level 10 Color"
+  "text.autoconfig.starlish.option.harmful_potion_color": "Harmful Potion Color"
 }

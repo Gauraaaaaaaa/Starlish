@@ -1,6 +1,7 @@
 package com.gaura.starlish.config;
 
 public enum Icon {
+
     SWORD("\uEFE0"),
     PICKAXE("\uEFE1"),
     AXE("\uEFE2"),
@@ -11,7 +12,7 @@ public enum Icon {
     TRIDENT("\uEFE7"),
     FISHING_ROD("\uEFE8"),
     SHIELD("\uEFE9"),
-    SHEARS("\uEFEA"),
+    MACE("\uEFEA"),
     HELMET("\uEFEB"),
     CHESTPLATE("\uEFEC"),
     LEGGINGS("\uEFED"),

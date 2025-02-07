@@ -3,7 +3,8 @@ package com.gaura.starlish.mixin;
 import com.gaura.starlish.Starlish;
 import com.gaura.starlish.config.GearIcon;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.tag.EnchantmentTags;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
@@ -19,18 +20,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class EnchantmentMixin {
 
     @Inject(method = "getName", at = @At("RETURN"), cancellable = true)
-    private void getStylishName(int level, CallbackInfoReturnable<Text> cir) {
+    private static void getStylishName(RegistryEntry<Enchantment> enchantment, int level, CallbackInfoReturnable<Text> cir) {
 
-        Enchantment enchantment = (Enchantment) (Object) this;
-
-        MutableText enchantmentName = Text.translatable(enchantment.getTranslationKey());
+        MutableText enchantmentName = enchantment.value().description().copy();
 
         // region ENCHANTMENT
-        if (enchantment.isCursed()) {
+        if (enchantment.isIn(EnchantmentTags.CURSE)) {
 
             enchantmentName.setStyle(Style.EMPTY.withColor(Starlish.CONFIG.curse_enchantment));
         }
-        else if (enchantment.isTreasure()) {
+        else if (enchantment.isIn(EnchantmentTags.TREASURE)) {
 
             enchantmentName.setStyle(Style.EMPTY.withColor(Starlish.CONFIG.treasure_enchantment));
         }
@@ -47,7 +46,7 @@ public class EnchantmentMixin {
 
             for (GearIcon elem : Starlish.CONFIG.gear_icon_list) {
 
-                if (enchantment == Registries.ENCHANTMENT.get(new Identifier(elem.enchantment))) {
+                if (enchantment.matchesId(Identifier.of(elem.enchantment))) {
 
                     before.append(Text.literal(elem.icon.getIcon()).setStyle(Style.EMPTY.withColor(elem.color)).append(ScreenTexts.SPACE));
                 }
@@ -62,18 +61,18 @@ public class EnchantmentMixin {
 
             MutableText after = Text.empty().append(ScreenTexts.SPACE);
 
-            if (enchantment.isCursed() && Starlish.CONFIG.enable_curse_icon) {
+            if (enchantment.isIn(EnchantmentTags.CURSE) && Starlish.CONFIG.enable_curse_icon) {
 
                 after.append(Text.literal(Starlish.CONFIG.curse_icon.getIcon()).setStyle(Style.EMPTY.withColor(Starlish.CONFIG.curse_icon_color)));
             }
-            else if (!enchantment.isCursed()) {
+            else {
 
-                after.append(Text.literal(Starlish.CONFIG.level_icon.getIcon().repeat(level)).setStyle(Style.EMPTY.withColor(getEnchantmentLevelColor(level, enchantment))));
+                after.append(Text.literal(Starlish.CONFIG.level_icon.getIcon().repeat(level)).setStyle(Style.EMPTY.withColor(getEnchantmentLevelColor(level, enchantment.value()))));
             }
 
             enchantmentName.append(after);
         }
-        else if (level > 1 || enchantment.getMaxLevel() > 1) {
+        else if (level > 1 || enchantment.value().getMaxLevel() > 1) {
 
             String original = cir.getReturnValue().getString();
 
@@ -83,7 +82,7 @@ public class EnchantmentMixin {
 
             MutableText after = Text.empty().append(ScreenTexts.SPACE);
 
-            after.append(romanLevel).setStyle(Style.EMPTY.withColor(getEnchantmentLevelColor(level, enchantment)));
+            after.append(romanLevel).setStyle(Style.EMPTY.withColor(getEnchantmentLevelColor(level, enchantment.value())));
 
             enchantmentName.append(after);
         }
@@ -93,7 +92,7 @@ public class EnchantmentMixin {
     }
 
     @Unique
-    private int getEnchantmentLevelColor(int level, Enchantment enchantment) {
+    private static int getEnchantmentLevelColor(int level, Enchantment enchantment) {
 
         return (level == enchantment.getMaxLevel() && Starlish.CONFIG.enable_level_max_color) ? Starlish.CONFIG.level_max_color : Starlish.getLevelColor(level);
     }
